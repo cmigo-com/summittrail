@@ -1,0 +1,170 @@
+:root {
+  --green-dark: #1f3d2b;
+  --green: #2f5d3a;
+  --gold: #c8912f;
+  --cream: #f8f6f1;
+  --text: #22291f;
+  --muted: #6b7568;
+  --danger: #b3413a;
+  --success: #2f7a3d;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: 'Georgia', 'Times New Roman', serif;
+  background: var(--cream);
+  color: var(--text);
+}
+
+.app-shell { display: flex; flex-direction: column; min-height: 100vh; }
+.main-content { flex: 1; }
+
+.navbar {
+  background: var(--green-dark);
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+.navbar-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 20px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.brand { color: white; text-decoration: none; display: flex; flex-direction: column; line-height: 1.1; }
+.brand-title { font-size: 20px; font-weight: bold; letter-spacing: 1px; }
+.brand-sub { font-size: 11px; color: var(--gold); letter-spacing: 2px; }
+.nav-links { display: flex; gap: 18px; align-items: center; flex-wrap: wrap; }
+.nav-links a { color: white; text-decoration: none; font-size: 14px; }
+.nav-links a:hover { color: var(--gold); }
+.btn-link {
+  background: none; border: none; color: white; cursor: pointer; font-size: 14px; padding: 0;
+  font-family: inherit;
+}
+.btn-link.danger { color: #ff8a80; }
+
+.hero {
+  background: linear-gradient(180deg, rgba(31,61,43,0.85), rgba(31,61,43,0.75)),
+    url('https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1400&q=60') center/cover;
+  color: white;
+  padding: 90px 20px;
+  text-align: center;
+}
+.hero-content { max-width: 720px; margin: 0 auto; }
+.eyebrow { color: var(--gold); letter-spacing: 3px; text-transform: uppercase; font-size: 13px; }
+.hero h1 { font-size: 40px; margin: 10px 0 20px; }
+.hero-lead { font-size: 17px; margin-bottom: 30px; opacity: 0.9; }
+.hero-actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+
+.btn {
+  display: inline-block;
+  padding: 12px 22px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 14px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  font-family: inherit;
+}
+.btn-primary { background: var(--gold); color: var(--green-dark); font-weight: bold; }
+.btn-outline { background: transparent; border-color: white; color: white; }
+.trek-detail .btn-outline, .admin-dashboard .btn-outline, .form .btn-outline { border-color: var(--green); color: var(--green); }
+.btn-sm { padding: 8px 14px; font-size: 13px; }
+
+.section { max-width: 1100px; margin: 0 auto; padding: 50px 20px; }
+.section h1 { color: var(--green-dark); }
+.section h2 { color: var(--green-dark); margin-bottom: 24px; }
+
+.grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
+.card {
+  background: white;
+  border: 1px solid #e5e0d5;
+  border-radius: 8px;
+  padding: 20px;
+}
+.card h3 { margin-top: 0; color: var(--green-dark); }
+.muted { color: var(--muted); font-size: 14px; }
+.small { font-size: 12px; }
+.price { font-weight: bold; color: var(--green); }
+
+.trek-card { display: flex; flex-direction: column; gap: 8px; }
+
+.back-link { color: var(--green); text-decoration: none; display: inline-block; margin-bottom: 16px; }
+
+.booking-box {
+  background: white;
+  border: 1px solid #e5e0d5;
+  border-radius: 8px;
+  padding: 24px;
+  margin-top: 30px;
+  max-width: 500px;
+}
+
+.form { display: flex; flex-direction: column; gap: 14px; }
+.form label { display: flex; flex-direction: column; gap: 6px; font-size: 14px; color: var(--text); }
+.form input, .form select, .form textarea {
+  padding: 10px; border: 1px solid #d6cfba; border-radius: 4px; font-size: 14px; font-family: inherit;
+}
+.form-row { display: flex; gap: 14px; }
+.form-row label { flex: 1; }
+
+.error { color: var(--danger); font-weight: bold; }
+.success { color: var(--success); font-weight: bold; }
+
+.auth-page { max-width: 420px; }
+
+.bookings-list { display: flex; flex-direction: column; gap: 16px; margin-top: 20px; }
+.booking-card-header { display: flex; justify-content: space-between; align-items: center; }
+.status-badge {
+  padding: 4px 10px; border-radius: 20px; font-size: 12px; font-weight: bold; color: white;
+}
+.status-pending { background: #b58a1e; }
+.status-confirmed { background: #2f6d5d; }
+.status-paid { background: var(--green); }
+.status-cancelled { background: var(--danger); }
+.status-completed { background: #555; }
+.admin-note { background: #f1ecdd; padding: 8px 12px; border-radius: 4px; font-size: 14px; }
+
+.admin-dashboard .tabs { display: flex; gap: 10px; margin: 20px 0; flex-wrap: wrap; }
+.tab {
+  background: white; border: 1px solid #d6cfba; padding: 8px 16px; border-radius: 20px; cursor: pointer;
+  font-family: inherit;
+}
+.tab-active { background: var(--green-dark); color: white; border-color: var(--green-dark); }
+
+.table-wrap { overflow-x: auto; }
+.admin-table { width: 100%; border-collapse: collapse; background: white; }
+.admin-table th, .admin-table td { padding: 10px; border-bottom: 1px solid #eee; text-align: left; font-size: 13px; vertical-align: top; }
+.admin-table th { background: #f1ecdd; }
+.row-saving { opacity: 0.5; }
+
+.form-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; }
+.full-width { grid-column: 1 / -1; }
+.form-actions { display: flex; gap: 10px; }
+
+.admin-trek-list { display: flex; flex-direction: column; gap: 16px; margin-top: 16px; }
+.small-heading { font-weight: bold; margin-bottom: 4px; font-size: 13px; }
+.departure-list { margin: 0 0 10px; padding-left: 18px; font-size: 13px; }
+.small-form { align-items: center; }
+.small-form input { padding: 6px; }
+
+.stat-card { text-align: center; }
+.stat-value { font-size: 28px; font-weight: bold; color: var(--green-dark); margin: 0; }
+.stat-label { color: var(--muted); font-size: 13px; margin: 4px 0 0; }
+
+.footer { background: var(--green-dark); color: white; margin-top: 40px; }
+.footer-inner {
+  max-width: 1100px; margin: 0 auto; padding: 40px 20px; display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;
+}
+.footer h4, .footer h5 { color: var(--gold); margin-bottom: 8px; }
+.footer-copy { text-align: center; padding: 14px; border-top: 1px solid rgba(255,255,255,0.15); font-size: 12px; margin: 0; }
+
+.page-loading { padding: 60px; text-align: center; color: var(--muted); }
